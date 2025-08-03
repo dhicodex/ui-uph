@@ -10,86 +10,378 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .search-bar {
-            border-radius: 20px 20px 20px 20px !important;
-            background-color: #3455a1 !important;
-            color: white !important;
-            padding-left: 15px;
-        }
-        .search-bar::placeholder {
-            color: #dbe4f3;
-        }
-        .search-btn {
-            background: none;
-            border: none;
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-        }
-        .lang-select {
-            color: #232654;
-            font-weight: 500;
-            font-size: 17px;
-            margin-left: 15px;
-        }
-        .navbar {
-            border-bottom: 1px solid #eee;
-        }
-    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-white py-0">
-        <div class="container-fluid">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg custom-header shadow-sm">
+        <div class="container custom-maxwidth">
             <!-- Logo -->
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="https://cleanupind.my.canva.site/ui-uph/_assets/media/1998177da86e2c70cad4574af1e94031.png" alt="UPH Logo" height="68" class="me-2">
+                <img src="https://cleanupind.my.canva.site/ui-uph/_assets/media/1998177da86e2c70cad4574af1e94031.png" alt="UPH Logo" height="70" class="me-2">
             </a>
-            
-            <!-- Toggle (untuk mobile) -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+
+            <!-- Hamburger Menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#uphNavbar" aria-controls="uphNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
-            <!-- Navbar Content -->
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <!-- Menu tengah -->
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-flex gap-5">
+
+            <!-- Menu & Search -->
+            <div class="collapse navbar-collapse" id="uphNavbar">
+                <ul class="navbar-nav mx-auto align-items-lg-center gap-40px">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link custom-nav-link" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">SPMI</a>
+                        <a class="nav-link custom-nav-link" href="#">SPMI</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Programs</a>
+                    <!-- Dropdown Programs -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle custom-nav-link" href="#" id="navbarPrograms" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarPrograms">
+                            <li><a class="dropdown-item" href="#">Program 1</a></li>
+                            <li><a class="dropdown-item" href="#">Program 2</a></li>
+                            <li><a class="dropdown-item" href="#">Program 3</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Audits</a>
+                    <!-- Dropdown Audits -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle custom-nav-link" href="#" id="navbarAudits" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Audits
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarAudits">
+                            <li><a class="dropdown-item" href="#">Audit 1</a></li>
+                            <li><a class="dropdown-item" href="#">Audit 2</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Surveys</a>
+                    <!-- Dropdown Surveys -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle custom-nav-link" href="#" id="navbarSurveys" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Surveys
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarSurveys">
+                            <li><a class="dropdown-item" href="#">Survey 1</a></li>
+                            <li><a class="dropdown-item" href="#">Survey 2</a></li>
+                        </ul>
                     </li>
                 </ul>
-                <!-- Search & Language -->
-                <form class="d-flex align-items-center position-relative me-3" style="width:270px;">
-                    <input class="form-control search-bar pe-5" type="search" placeholder="Type Here To Search.." aria-label="Search">
-                    <button class="search-btn" type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                </form>
-                <span class="lang-select">EN</span>
-                <span class="lang-select">ID</span>
+
+                <!-- Search & Lang -->
+                <div class="d-flex align-items-center ms-lg-4 mt-3 mt-lg-0">
+                    <!-- Search Box -->
+                    <form class="search-form d-flex">
+                        <input class="form-control custom-search-input" type="search" placeholder="Type Here To Search.." aria-label="Search">
+                        <button class="btn custom-search-btn" type="submit">
+                            <svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </form>
+                    <!-- Language Selector -->
+                    <div class="ms-3 lang-switch">
+                        <span class="lang-option active" data-lang="EN">EN</span>
+                        <span class="lang-option" data-lang="ID">ID</span>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
+    <!-- Carousel -->
+    <div id="educationSlider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <!-- Placeholder image -->
+                <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Education Placeholder">
+                <div class="carousel-caption d-flex flex-column align-items-center">
+                    <div class="main-title text-white text-center">Fondasi Mutu untuk Pendidikan Unggul</div>
+                    <div class="subtitle text-white">
+                        Sistem terpadu untuk pengelolaan mutu akademik dan institusional sesuai standar nasional dan internasional
+                    </div>
+                    <!-- Custom Indicators -->
+                    <div class="custom-indicators">
+                        <button type="button" data-bs-target="#educationSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#educationSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#educationSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Education Placeholder 2">
+                <div class="carousel-caption d-flex flex-column align-items-center">
+                    <div class="main-title text-white text-center">Fondasi Mutu untuk Pendidikan Unggul</div>
+                    <div class="subtitle text-white">
+                        Sistem terpadu untuk pengelolaan mutu akademik dan institusional sesuai standar nasional dan internasional
+                    </div>
+                    <div class="custom-indicators">
+                        <button type="button" data-bs-target="#educationSlider" data-bs-slide-to="0" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#educationSlider" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#educationSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Education Placeholder 3">
+                <div class="carousel-caption d-flex flex-column align-items-center">
+                    <div class="main-title text-white text-center">Fondasi Mutu untuk Pendidikan Unggul</div>
+                    <div class="subtitle text-white">
+                        Sistem terpadu untuk pengelolaan mutu akademik dan institusional sesuai standar nasional dan internasional
+                    </div>
+                    <div class="custom-indicators">
+                        <button type="button" data-bs-target="#educationSlider" data-bs-slide-to="0" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#educationSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#educationSlider" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievment -->
+    <section class="uph-achievment">
+        <div class="uph-achievment__wrapper container custom-maxwidth">
+            <div class="up-achievment__top d-flex align-items-center">
+                <img src="https://cleanupind.my.canva.site/ui-uph/_assets/media/1998177da86e2c70cad4574af1e94031.png" alt="UPH Logo" height="140" class="me-2">
+                <div class="up-achievment__line w-100"></div>
+            </div>
+
+            <div class="up-achievment__content row g-3 py-3 py-md-5">
+                <div class="col-12 col-md-6 col-lg-4 d-flex flex-column gap-4">
+                    <div class="up-achievment__item d-flex align-items-end gap-3">
+                        <div class="up-achievment__item-image rounded-4 p-2 d-flex align-items-center justify-content-center">
+                            <img src="https://placehold.co/83x83" alt="achievment">
+                        </div>
+                        
+                        <div class="up-achievment__item-text flex-grow-1 flex-shrink-1 pb-2">
+                            <h2 class="m-0">#301</h2>
+                            <p class="m-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <div class="up-achievment__item d-flex align-items-end gap-3">
+                        <div class="up-achievment__item-image rounded-4 p-2 d-flex align-items-center justify-content-center">
+                            <img src="https://placehold.co/83x83" alt="achievment">
+                        </div>
+                        
+                        <div class="up-achievment__item-text flex-grow-1 flex-shrink-1 pb-2">
+                            <h2 class="m-0">#301</h2>
+                            <p class="m-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <div class="up-achievment__item d-flex align-items-end gap-3">
+                        <div class="up-achievment__item-image rounded-4 p-2 d-flex align-items-center justify-content-center">
+                            <img src="https://placehold.co/83x83" alt="achievment">
+                        </div>
+                        
+                        <div class="up-achievment__item-text flex-grow-1 flex-shrink-1 pb-2">
+                            <h2 class="m-0">#301</h2>
+                            <p class="m-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 d-flex flex-column gap-4">
+                    <div class="up-achievment__item d-flex align-items-end gap-3">
+                        <div class="up-achievment__item-image rounded-4 p-2 d-flex align-items-center justify-content-center">
+                            <img src="https://placehold.co/83x83" alt="achievment">
+                        </div>
+                        
+                        <div class="up-achievment__item-text flex-grow-1 flex-shrink-1 pb-2">
+                            <h2 class="m-0">#301</h2>
+                            <p class="m-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <div class="up-achievment__item d-flex align-items-end gap-3">
+                        <div class="up-achievment__item-image rounded-4 p-2 d-flex align-items-center justify-content-center">
+                            <img src="https://placehold.co/83x83" alt="achievment">
+                        </div>
+                        
+                        <div class="up-achievment__item-text flex-grow-1 flex-shrink-1 pb-2">
+                            <h2 class="m-0">#301</h2>
+                            <p class="m-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <div class="up-achievment__item d-flex align-items-end gap-3">
+                        <div class="up-achievment__item-image rounded-4 p-2 d-flex align-items-center justify-content-center">
+                            <img src="https://placehold.co/83x83" alt="achievment">
+                        </div>
+                        
+                        <div class="up-achievment__item-text flex-grow-1 flex-shrink-1 pb-2">
+                            <h2 class="m-0">#301</h2>
+                            <p class="m-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 d-flex flex-column gap-4">
+                    <div class="up-achievment__item d-flex align-items-end gap-3">
+                        <div class="up-achievment__item-image rounded-4 p-2 d-flex align-items-center justify-content-center">
+                            <img src="https://placehold.co/83x83" alt="achievment">
+                        </div>
+                        
+                        <div class="up-achievment__item-text flex-grow-1 flex-shrink-1 pb-2">
+                            <h2 class="m-0">#301</h2>
+                            <p class="m-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <div class="up-achievment__item d-flex align-items-end gap-3">
+                        <div class="up-achievment__item-image rounded-4 p-2 d-flex align-items-center justify-content-center">
+                            <img src="https://placehold.co/83x83" alt="achievment">
+                        </div>
+                        
+                        <div class="up-achievment__item-text flex-grow-1 flex-shrink-1 pb-2">
+                            <h2 class="m-0">#301</h2>
+                            <p class="m-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                    <div class="up-achievment__item d-flex align-items-end gap-3">
+                        <div class="up-achievment__item-image rounded-4 p-2 d-flex align-items-center justify-content-center">
+                            <img src="https://placehold.co/83x83" alt="achievment">
+                        </div>
+                        
+                        <div class="up-achievment__item-text flex-grow-1 flex-shrink-1 pb-2">
+                            <h2 class="m-0">#301</h2>
+                            <p class="m-0">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner -->
+    <section class="banner py-5">
+        <div class="banner__wrapper container custom-maxwidth d-flex flex-column text-center align-items-center justify-content-center">
+            <h2 class="m-0 text-white">Sistem Penjaminan Mutu Internal</h2>
+            <p class="m-0 text-white mt-2">
+                A quality management system designed to effectively and efficiently support compliance with national and international standards
+            </p>
+            <a href="#" class="mt-4 text-decoration-none">Learn More...</a>
+        </div>
+    </section>
+
+    <!-- News -->
+    <div class="container custom-maxwidth py-5">
+        <div class="text-center mb-5">
+            <div class="recent-news-title">Recent News</div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="News 1" class="news-card-img">
+                    <a href="#" class="news-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</a>
+                </div>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=600&q=80" alt="News 2" class="news-card-img">
+                    <a href="#" class="news-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</a>
+                </div>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80" alt="News 3" class="news-card-img">
+                    <a href="#" class="news-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-0 mt-lg-5">
+            <button class="btn more-news-btn text-white">More News</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pt-4" style="background: #fff;">
+        <div class="container">
+            <div class="row align-items-center">
+            <!-- Kiri: Kontak & Sosial Media -->
+            <div class="col-md-7 mb-4 mb-md-0">
+                <div class="mb-3">
+                <div class="d-flex align-items-start mb-2">
+                    <span class="me-2 fs-5"><i class="bi bi-geo-alt-fill"></i></span>
+                    <span style="font-size: 16px; color: #000;">Jalan M.H. Thamrin Boulevard No.1100, Kelapa Dua,<br>Tangerang Regency, Banten 15811</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="me-2 fs-5"><i class="bi bi-telephone-fill"></i></span>
+                    <span style="font-size: 16px; color: #000;">(021) 5460901 ext.2151</span>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <span class="me-2 fs-5"><i class="bi bi-envelope-fill"></i></span>
+                    <span style="font-size: 16px; color: #000;">qa.uph.edu</span>
+                </div>
+                </div>
+                <!-- Sosial media -->
+                <div class="mb-3">
+                <a href="#" class="me-3 text-dark fs-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="me-3 text-dark fs-2"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="me-3 text-dark fs-2"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-dark fs-2"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+            <!-- Kanan: Logo -->
+            <div class="col-md-5 text-md-end text-center mb-3 mb-md-0">
+                <img src="https://cleanupind.my.canva.site/ui-uph/_assets/media/1998177da86e2c70cad4574af1e94031.png" alt="UPH" style="max-width: 220px; height: auto;">
+            </div>
+            </div>
+            <div class="row mt-4">
+            <div class="col-md-12 d-flex flex-column text-md-end text-center">
+                <a href="#" style="font-size: 14px; color: #000;" class="me-3">Privacy Policy</a>
+                <a href="#" style="font-size: 14px; color: #000;" class="me-3">Terms &amp; Conditions</a>
+            </div>
+            <div class="col-12 text-md-end text-center mt-2">
+                <span style="font-size: 14px; color: #000;">
+                © Copyright 2025 Yayasan Universitas Pelita Harapan. All Rights Reserved.
+                </span>
+            </div>
+            </div>
+        </div>
+        <!-- Footer Bawah -->
+        <div class="bg-dark text-white px-2 py-2 d-flex justify-content-between align-items-center mt-3" style="font-size: 14px;">
+            <span>Terms &amp; Support</span>
+        </div>
+    </footer>
+
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.lang-option').forEach(function(el){
+            el.addEventListener('click', function(){
+                document.querySelectorAll('.lang-option').forEach(function(e){
+                    e.classList.remove('active');
+                });
+                this.classList.add('active');
+                // Bisa tambahkan kode ganti bahasa di sini jika ada
+            });
+        });
+    </script>
+
+    <script>
+        // Script untuk sinkronisasi indicator custom di setiap slide
+        document.querySelectorAll('.carousel').forEach(function(carousel){
+            var inner = carousel.querySelector('.carousel-inner');
+            var slides = inner.querySelectorAll('.carousel-item');
+            slides.forEach(function(slide, idx){
+                var indicators = slide.querySelectorAll('.custom-indicators button');
+                indicators.forEach(function(btn, i){
+                    btn.addEventListener('click', function(){
+                        var bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel);
+                        bsCarousel.to(i);
+                    });
+                });
+            });
+            carousel.addEventListener('slide.bs.carousel', function (event) {
+                var indicators = carousel.querySelectorAll('.custom-indicators');
+                indicators.forEach(function(group, idx){
+                    var buttons = group.querySelectorAll('button');
+                    buttons.forEach(function(btn, bidx){
+                        btn.classList.toggle('active', bidx === event.to);
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
