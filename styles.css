@@ -123,6 +123,72 @@ body {
     filter: invert(1); /* Ubah warna jadi putih */
 }
 
+/* CAROUSEL */
+.carousel,
+.carousel-inner,
+.carousel-item,
+.carousel img {
+    max-height: 693px;
+    height: 693px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 40px;
+}
+
+.carousel-caption .main-title {
+    font-size: 54px;
+    font-weight: 600;
+}
+
+.carousel-caption .subtitle {
+    font-size: 22px;
+    font-weight: 300;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    word-break: break-word;
+}
+
+/* Hide next/prev button */
+.carousel-control-prev, .carousel-control-next {
+    display: none !important;
+}
+
+/* Custom indicator position */
+.custom-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.custom-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.custom-indicators button.active {
+    opacity: 1;
+    background-color: #fff;
+}
+
 
 @media (max-width: 767.98px) {
     .search-form {
@@ -130,6 +196,31 @@ body {
     }
     .custom-header {
         min-height: 60px;
+    }
+
+    /* CAROUSEL */
+    .carousel,
+    .carousel-inner,
+    .carousel-item,
+    .carousel img {
+        height: 350px;
+        max-height: 350px;
+    }
+    .carousel-caption  .main-title {
+        font-size: 28px;
+    }
+    .carousel-caption .subtitle {
+        font-size: 16px;
+        max-width: 90vw;
+    }
+
+    .custom-indicators button {
+        width: 10px;
+        height: 10px;
+    }
+
+    .carousel-caption {
+        padding-bottom: 20px;
     }
 }
 
