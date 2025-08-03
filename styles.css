@@ -43,17 +43,6 @@ body {
     margin-right: 40px;
 }
 
-/* Responsive: remove gap on mobile and center menu */
-@media (max-width: 991.98px) {
-    .gap-40px > *:not(:last-child) {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-    .navbar-nav {
-        align-items: flex-start !important;
-    }
-}
-
 /* Custom search box */
 .search-form {
     position: relative;
@@ -143,6 +132,7 @@ body {
     right: 0;
     bottom: 0;
     padding-bottom: 40px;
+    
 }
 
 .carousel-caption .main-title {
@@ -189,39 +179,27 @@ body {
     background-color: #fff;
 }
 
+/* Achievment */
+.up-achievment__line {
+    background-color: #2b4f9d;
+    height: 2px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
 
-@media (max-width: 767.98px) {
-    .search-form {
-        width: 180px;
-    }
-    .custom-header {
-        min-height: 60px;
-    }
+.up-achievment__item-image {
+    width: 120px;
+    height: 125px;
+    background: #2b4f9d;
+}
 
-    /* CAROUSEL */
-    .carousel,
-    .carousel-inner,
-    .carousel-item,
-    .carousel img {
-        height: 350px;
-        max-height: 350px;
-    }
-    .carousel-caption  .main-title {
-        font-size: 28px;
-    }
-    .carousel-caption .subtitle {
-        font-size: 16px;
-        max-width: 90vw;
-    }
+.up-achievment__item-text {
+    color: #2b4f9d;
+}
 
-    .custom-indicators button {
-        width: 10px;
-        height: 10px;
-    }
-
-    .carousel-caption {
-        padding-bottom: 20px;
-    }
+.up-achievment__item-text h2 {
+    font-size: 44px;
+    font-weight: 700;
 }
 
 /* Untuk desktop */
@@ -260,5 +238,59 @@ body {
     }
     .lang-switch {
         flex-shrink: 0;
+    }
+
+    .gap-40px > *:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .navbar-nav {
+        align-items: flex-start !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .search-form {
+        width: 180px;
+    }
+    .custom-header {
+        min-height: 60px;
+    }
+
+    /* CAROUSEL */
+    .carousel,
+    .carousel-inner,
+    .carousel-item,
+    .carousel img {
+        height: 350px;
+        max-height: 350px;
+    }
+    .carousel-caption  .main-title {
+        font-size: 28px;
+    }
+    .carousel-caption .subtitle {
+        font-size: 16px;
+        max-width: 90vw;
+    }
+
+    .custom-indicators button {
+        width: 10px;
+        height: 10px;
+    }
+
+    .carousel-caption {
+        padding-bottom: 20px;
+    }
+
+    /* Achievment */
+    .up-achievment__top img {
+        height: 70px !important;
+    }
+
+    .up-achievment__line {
+        background-color: #2b4f9d;
+        height: 2px;
+        margin-left: 40px;
+        margin-top: 20px;
     }
 }
