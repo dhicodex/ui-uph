@@ -202,6 +202,26 @@ body {
     font-weight: 700;
 }
 
+/* Banner */
+.banner {
+    background-color: #2b4f9d;
+}
+
+.banner h2 {
+    font-size: 54px;
+}
+
+.banner p {
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 700px;
+}
+
+.banner a {
+    font-size: 18px;
+    color: #a1afd4;
+}
+
 /* Untuk desktop */
 @media (min-width: 992px) {
     .custom-maxwidth {
@@ -292,5 +312,14 @@ body {
         height: 2px;
         margin-left: 40px;
         margin-top: 20px;
+    }
+
+    /* Brand */
+    .banner h2 {
+        font-size: 48px;
+    }
+
+    .banner p {
+        font-size: 16px;
     }
 }
