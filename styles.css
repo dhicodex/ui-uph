@@ -180,26 +180,81 @@ body {
 }
 
 /* Achievment */
+.uph-achievment {
+    position: relative;
+}
+
+.uph-achievment::before {
+    background-image: url('./assets/images/backdrop.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 .up-achievment__line {
-    background-color: #2b4f9d;
-    height: 2px;
-    margin-left: 100px;
-    margin-top: 50px;
+    position: relative;
+    height: 60px;
 }
 
-.up-achievment__item-image {
-    width: 120px;
+.up-achievment__top {
+    padding-left: 30px;
+}
+
+.up-achievment__line::before {
+    content: '';
+    position: absolute;
+    background-image: url('./assets/images/line-blue.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.up-achievment__content-wrapper {
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(341px, 1fr));
+}
+
+.up-achievment__item {
+    flex: 0 0 auto;
+}
+
+.up-achievment__item-icon {
+    width: 121px;
     height: 125px;
-    background: #2b4f9d;
+    background-color: #2b4f9d;
+    border-radius: 12px;
 }
 
-.up-achievment__item-text {
+.up-achievment__item-icon img {
+    height: 94px;
+}
+
+.up-achievment__content {
+    padding: 0 110px;
+}
+
+.up-achievment__item-info {
+    flex: 1;
+}
+
+.up-achievment__item-info h2 {
+    font-size: 40px;
+    font-weight: 600;
     color: #2b4f9d;
 }
 
-.up-achievment__item-text h2 {
-    font-size: 44px;
-    font-weight: 700;
+.up-achievment__item-info p {
+    font-weight: 300;
+    color: #2b4f9d;
 }
 
 /* Banner */
@@ -277,6 +332,11 @@ body {
     .news-card {
         width: 100%;
         max-width: 364px;
+    }
+
+    /* achievment */
+    .up-achievment__content-wrapper {
+     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));   
     }
 }
 
@@ -409,5 +469,10 @@ body {
     }
     .news-card-desc {
         font-size: 14px;
+    }
+
+    /* achievment */
+    .up-achievment__content {
+        padding: 0;
     }
 }
