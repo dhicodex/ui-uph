@@ -328,6 +328,21 @@ body {
     background: #213c72;
 }
 
+/* footer */
+.contacts img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.sosmed img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
 @media (max-width: 1200px) {
     .news-card {
         width: 100%;
